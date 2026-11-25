@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Contact Info Tech Fly | ITF Talk{% endblock %}
+{% block main %}<div class="cwrap"><div class="chead"><h1>Let’s talk about your project</h1><p class="lead">Use the contact form or chat with our assistant. We reply within 24 hours.</p></div>
+<div class="cgrid"><div>
+<div class="card cc"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><h4>Call us</h4><a href="tel:+917225880469">+91 7225880469</a></div></div>
+<div class="card cc"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><h4>Email</h4><a href="mailto:contactinfotechfly@gmail.com">contactinfotechfly@gmail.com</a></div></div>
+<div class="card cc"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><h4>Location</h4><span>India (Remote)</span></div></div>
+<div class="card cc"><div class="ic"><i class="fa-solid fa-globe"></i></div><div><h4>Website</h4><a href="https://www.infotechfly.com" target="_blank" rel="noopener">www.infotechfly.com</a></div></div></div>
+<div class="lw"><div class="lw-tabs" role="tablist" aria-label="Choose how to contact us">
+<button type="button" role="tab" class="on" aria-selected="true" data-tab="form"><i class="fa-solid fa-envelope"></i> Contact form</button>
+<button type="button" role="tab" aria-selected="false" data-tab="bot"><i class="fa-solid fa-robot"></i> Chatbot</button></div>
+<div class="lw-pane" data-pane="form"><div class="card fw"><h3>Send us a message</h3><p class="mu">Fill in your details and choose how to send them.</p>
+<form class="lead" novalidate autocomplete="on"><label for="lf-name">Full name</label><input id="lf-name" name="name" maxlength="60" placeholder="Your full name" autocomplete="name" required>
+<div class="two"><div><label for="lf-phone">Phone number</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="+91 7225880469" autocomplete="tel" required></div>
+<div><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" maxlength="80" placeholder="you@example.com" autocomplete="email" required></div></div>
+<label for="lf-msg">Message</label><textarea id="lf-msg" name="message" rows="4" maxlength="1000" placeholder="Tell us about your project..." required></textarea>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="acts"><button type="button" class="act wa" data-via="whatsapp"><span class="ico"><i class="fa-brands fa-whatsapp"></i></span><span class="tx"><b>Send to WhatsApp</b><small>Opens chat instantly</small></span></button>
+<button type="button" class="act team" data-via="team"><span class="ico"><i class="fa-solid fa-users"></i></span><span class="tx"><b>Send to Team</b><small>We reply within 24 hours</small></span></button></div></form></div></div>
+<div class="lw-pane" data-pane="bot" hidden><div data-chatbot></div></div></div></div></div>
+<footer class="ftr">&copy; <span id="yr"></span> <b>Info Tech Fly</b>. All rights reserved.</footer>{% endblock %}
+{% block scripts %}<script src="/static/js/data.js"></script><script src="/static/js/config.js"></script><script src="/static/js/chatbot.js"></script><script src="/static/js/contact.js"></script>{% endblock %}

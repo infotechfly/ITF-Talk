@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{% block title %}ITF Talk | Info Tech Fly{% endblock %}</title>
+<meta name="description" content="ITF Talk by Info Tech Fly: private chat rooms with live translation. No signup, and everything is deleted when you leave.">
+<meta name="theme-color" content="#1E3A5F"><link rel="icon" href="/static/img/Logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head><body data-token="{{ token|default('') }}">
+<header class="hdr"><a class="brand" href="/" id="brand"><span class="logo"><img src="/static/img/Logo.png" alt=""></span><span>ITF <b>Talk</b></span></a>
+<nav class="hnav" aria-label="Main"><a href="/" class="{{ 'on' if request.path != '/contact' }}">Chat</a><a href="/contact" {% if request.path != '/contact' %}target="_blank" rel="noopener"{% endif %} class="{{ 'on' if request.path == '/contact' }}">Contact</a>
+<button class="tbtn" id="theme" aria-label="Switch light or dark mode"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button></nav></header>
+<main>{% block main %}{% endblock %}</main><div id="toast" role="status" aria-live="polite"></div>
+<script src="/static/js/common.js"></script>{% block scripts %}{% endblock %}
+<script src="/static/js/network.js"></script></body></html>

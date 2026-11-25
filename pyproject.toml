@@ -1,0 +1,10 @@
+[project]
+name = "itf-talk"
+version = "2.0.0"
+description = "ITF Talk by Info Tech Fly: private chat rooms with live translation"
+requires-python = ">=3.9"
+dependencies = [
+  "flask>=3.1,<4.0",
+  "gunicorn~=23.0.0",
+  "deep-translator>=1.11"
+]

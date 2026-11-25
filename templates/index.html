@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}ITF Talk | Private chat rooms with live translation{% endblock %}
+{% block main %}
+<section id="name" class="screen"><div class="hero"><div>
+<h1>Write in your language. Everyone reads theirs.</h1>
+<p class="lead">Open a private room, share the link, and chat with live translation. No signup. Everything is deleted when you leave.</p>
+</div>
+<form id="nf" class="panel"><h2 id="nt">What should we call you?</h2><p id="invite" class="note" hidden></p>
+<label for="nm">Your name</label><input id="nm" maxlength="30" autocomplete="off" placeholder="For example, Aarav" required>
+<button class="btn wide" id="go"><i class="fa-solid fa-arrow-right-to-bracket"></i> Continue</button>
+<small class="mu">You get a one-time ID for this tab only. Refreshing or closing the tab removes you.</small></form></div></section>
+
+<section id="choose" class="screen" hidden><div class="center"><h2 class="big">Hi <span id="hi"></span>, pick a chat type</h2>
+<div class="kinds"><button class="kind" data-kind="one"><i class="fa-solid fa-user-group"></i><h3>1 to 1 chat</h3><p>A private room for exactly two people.</p></button>
+<button class="kind" data-kind="group"><i class="fa-solid fa-users"></i><h3>Group chat</h3><p>Many people in one room. You are the admin.</p></button></div></div></section>
+
+<section id="make" class="screen" hidden><form id="mf" class="panel"><h2 id="mt">Name your room</h2>
+<p class="mu">You are the admin. If you leave, close the tab or refresh, the room and its chat are deleted.</p>
+<label for="rm">Room name</label><input id="rm" maxlength="40" autocomplete="off" placeholder="For example, Project sync" required>
+<button class="btn wide"><i class="fa-solid fa-plus"></i> Create room</button><button class="btn ghost wide" type="button" id="mb">Back</button></form></section>
+
+<section id="room" class="screen" hidden>
+<div class="rbar"><div class="t"><b id="rn"></b><small id="rk"></small></div>
+<select id="ml" aria-label="My language"></select>
+<button class="btn ghost pbtn" id="pb" type="button"><i class="fa-solid fa-users"></i> <span id="pc"></span></button>
+<button class="btn danger" id="leave" type="button"></button></div>
+<div class="share"><i class="fa-solid fa-link"></i><input id="link" readonly aria-label="Room link"><button class="btn" id="cp" type="button">Copy</button><button class="btn ghost" id="sh" type="button" hidden>Share</button></div>
+<div class="rbody" id="rb"><div class="chatcol"><div id="msgs"></div>
+<div class="soonbar"><i class="fa-solid fa-hourglass-half"></i> Voice messages, calls and meetings are coming soon.</div>
+<form id="cf"><button type="button" class="soonb" data-s="Voice message" aria-label="Voice message, coming soon"><i class="fa-solid fa-microphone"></i></button><button type="button" class="soonb" data-s="Voice call" aria-label="Voice call, coming soon"><i class="fa-solid fa-phone"></i></button><button type="button" class="soonb" data-s="Video call" aria-label="Video call, coming soon"><i class="fa-solid fa-video"></i></button>
+<input id="ct" maxlength="1000" autocomplete="off" placeholder="Type in your language"><button class="btn" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button></form></div>
+<aside id="people" aria-label="People in this room"></aside></div>
+<div id="gate"><div class="panel"><h2>Choose your language</h2><p class="mu">Write in it, and read everyone else's messages in it.</p>
+<label for="gl">I speak</label><select id="gl"></select><button class="btn wide" id="gb"><i class="fa-solid fa-comments"></i> Start chatting</button></div></div></section>
+{% endblock %}
+{% block scripts %}<script>window.LANGS={{ langs|tojson }}</script>
+<script src="/static/js/rt.js"></script><script src="/static/js/app.js"></script>{% endblock %}
